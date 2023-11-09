@@ -1,5 +1,5 @@
 from typing import List
-from math import ceil
+import math
 
 
 def get_item_at_position(list_in: List, pos: int) -> List:
@@ -65,7 +65,23 @@ def half_list(list_in: List, half: int) -> List:
     If the length of list_in is an odd number, round the half value up (hint: math.ceil()).
     :return: A list.
     """
-    pass  # remove pass statement and implement me
+    list_len = len(list_in)
+    half_num_odd = math.ceil(list_len / 2)
+    half_num_even = list_len // 2
+
+    if (list_len % 2) != 0:
+        if (half == 1):
+                halved_list = list_in[0:half_num_odd]
+        else:
+                halved_list = list_in[half_num_odd:list_len]
+    else:
+        if (half == 1):
+                halved_list = list_in[0:half_num_even]
+        else: 
+                halved_list = list_in[half_num_even:list_len]
+
+    return halved_list
+      # remove pass statement and implement me
 
 
 def remove_odds(list_in: List[int]) -> None:
@@ -74,7 +90,17 @@ def remove_odds(list_in: List[int]) -> None:
 
     :return: None
     """
-    pass  # remove pass statement and implement me
+    
+    for num in list_in:
+
+        if (num % 2 == 0):
+            pass
+        else:
+            list_in.remove(num)
+    
+    return None
+
+    # remove pass statement and implement me
 
 
 def remove_evens(list_in: List[int]) -> None:
@@ -83,6 +109,13 @@ def remove_evens(list_in: List[int]) -> None:
 
     :return: None
     """
+
+    for num in list_in:
+
+        if (num % 2 == 0):
+            list_in.remove(num)
+    
+    return None
     pass  # remove pass statement and implement me
 
 
