@@ -36,19 +36,28 @@ def sort_by_commit_count(list_in: List) -> List:
     :param list_in: A list where each entry is a list containing a name and the commit count corresponding to a user
     :return: The same list sorted in ascending order based on the commit count
     """
-    # I tried a loop but that gave me weird results
-    smallest = list_in[0]
+   
+    """
+    I should try to figure out a bubble sort again sometime
+    smallest = list_in[0][1]
     length = len(list_in)
     
-    for item in range(0, length):
-         if item < smallest:
-            list_in[0] = item
-    pass
+    for num in range(0, length-1):
+
+        number = list_in[num][1]
+        
+        if number < smallest:
+            list_in[0][1] = list_in[num][1]
+            smallest = number
+    
+    return list_in
+    
+    """
     # I looked up sorted method, that creates a new list and i need same list
     # I found that .sort can take an argument to sort by
     # I need to put in key= not just what I want they function to sort by to be
-    # list_in.sort(key=lambda x: x[1])
-    # return list_in
+    list_in.sort(key=lambda x: x[1])
+    return list_in
          
 
     # remove pass statement and implement me
