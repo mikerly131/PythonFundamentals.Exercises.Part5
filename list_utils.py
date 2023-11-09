@@ -84,7 +84,7 @@ def half_list(list_in: List, half: int) -> List:
     Given a list, this function will return a new list that contains half of the items in the list_in parameter.
 
     :param list_in: The list which will be used to generate the return value
-    :param half: 1 will use the first half of the input list. 2 will use the second half of the input list.
+    :param if half = 1 then get the first half of the input list. if  half = 2 then get the second half of the input list.
     If the length of list_in is an odd number, round the half value up (hint: math.ceil()).
     :return: A list.
     """
@@ -92,11 +92,11 @@ def half_list(list_in: List, half: int) -> List:
     half_num_odd = math.ceil(list_len / 2)
     half_num_even = list_len // 2
 
-    if (list_len % 2) != 0:
+    if list_len % 2 != 0:
         if (half == 1):
                 halved_list = list_in[0:half_num_odd]
         else:
-                halved_list = list_in[half_num_odd:list_len]
+                halved_list = list_in[half_num_odd-1:list_len]
     else:
         if (half == 1):
                 halved_list = list_in[0:half_num_even]
