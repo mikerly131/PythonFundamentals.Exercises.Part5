@@ -36,8 +36,22 @@ def sort_by_commit_count(list_in: List) -> List:
     :param list_in: A list where each entry is a list containing a name and the commit count corresponding to a user
     :return: The same list sorted in ascending order based on the commit count
     """
+    # I tried a loop but that gave me weird results
+    smallest = list_in[0]
+    length = len(list_in)
+    
+    for item in range(0, length):
+         if item < smallest:
+            list_in[0] = item
+    pass
+    # I looked up sorted method, that creates a new list and i need same list
+    # I found that .sort can take an argument to sort by
+    # I need to put in key= not just what I want they function to sort by to be
+    # list_in.sort(key=lambda x: x[1])
+    # return list_in
+         
 
-    pass  # remove pass statement and implement me
+    # remove pass statement and implement me
 
 
 def gen_list_of_nums(n: int) -> List[int]:
@@ -116,7 +130,7 @@ def remove_evens(list_in: List[int]) -> None:
             list_in.remove(num)
     
     return None
-    pass  # remove pass statement and implement me
+    # remove pass statement and implement me
 
 
 def concatenate_lists(list_a: List, list_b: List) -> List:
@@ -127,7 +141,10 @@ def concatenate_lists(list_a: List, list_b: List) -> List:
     :param list_b: Another list
     :return: A list containing all elements from list_a and list_b
     """
-    pass  # remove pass statement and implement me
+    new_list = list_a + list_b
+    return new_list
+
+    # remove pass statement and implement me
 
 
 def multiply_list(list_in: List, scalar: int) -> List:
@@ -139,4 +156,6 @@ def multiply_list(list_in: List, scalar: int) -> List:
     :param scalar: An integer
     :return: A list
     """
-    pass  # remove pass statement and implement me
+    new_list = list_in * scalar
+    return new_list
+    # remove pass statement and implement me
